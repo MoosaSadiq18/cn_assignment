@@ -12,11 +12,11 @@ public class OpportunityService {
 
     private final OpportunityRepository repository;
 
-    public OpportunityService(OpportunityRepository repository) {
+    public OpportunityService(OpportunityRepository repository){
         this.repository = repository;
     }
 
-    public ResearchEntity create(ResearchEntity opportunity) {
+    public ResearchEntity create(ResearchEntity opportunity){
         if (opportunity.getStatus() == null) {
             opportunity.setStatus(OpportunityStatus.OPEN);
         }
@@ -24,17 +24,17 @@ public class OpportunityService {
         return repository.save(opportunity);
     }
 
-    public List<ResearchEntity> getAll() {
+    public List<ResearchEntity> getAll(){
         return repository.findAll();
     }
 
-    public ResearchEntity getById(Long id) {
+    public ResearchEntity getById(Long id){
         return repository.findById(id)
                 .orElseThrow(() ->
                         new RuntimeException("Opportunity not found"));
     }
 
-    public ResearchEntity update(Long id, ResearchEntity updatedOpportunity) {
+    public ResearchEntity update(Long id, ResearchEntity updatedOpportunity){
 
         ResearchEntity existing = getById(id);
 
@@ -51,7 +51,7 @@ public class OpportunityService {
         return repository.save(existing);
     }
 
-    public void delete(Long id) {
+    public void delete(Long id){
         ResearchEntity opportunity = getById(id);
         repository.delete(opportunity);
     }
