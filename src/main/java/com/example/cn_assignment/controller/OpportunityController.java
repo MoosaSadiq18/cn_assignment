@@ -20,6 +20,7 @@ public class OpportunityController {
         this.service = service;
     }
 
+
     @PostMapping
     public ResponseEntity<ResearchEntity> create(@Valid @RequestBody ResearchEntity opportunity){
 

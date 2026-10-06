@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Research Opportunities</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Research Opportunities</h1>
+
+    <div id="message"></div>
+
+    <section class="form-section">
+
+        <h2 id="form-title">Create Opportunity</h2>
+
+        <form id="opportunity-form">
+
+            <input type="hidden" id="opportunity-id">
+
+            <label>
+                Research Title
+                <input id="researchTitle" required>
+            </label>
+
+            <label>
+                Research Description
+                <textarea id="researchDescription" required></textarea>
+            </label>
+
+            <label>
+                Research Area
+                <input id="researchArea" required>
+            </label>
+
+            <label>
+                Faculty Name
+                <input id="facultyName" required>
+            </label>
+
+            <label>
+                Department
+                <input id="department" required>
+            </label>
+
+            <label>
+                Required Skills
+                <input id="requiredSkills" required>
+            </label>
+
+            <label>
+                Available Positions
+                <input
+                        id="availablePositions"
+                        type="number"
+                        min="1"
+                        required
+                >
+            </label>
+
+            <label>
+                Application Deadline
+                <input
+                        id="applicationDeadline"
+                        type="date"
+                        required
+                >
+            </label>
+
+            <label>
+                Status
+                <select id="status">
+                    <option value="OPEN">Open</option>
+                    <option value="CLOSED">Closed</option>
+                </select>
+            </label>
+
+            <button type="submit">Save Opportunity</button>
+
+            <button
+                    type="button"
+                    id="cancel-button"
+                    onclick="resetForm()"
+                    style="display:none;"
+            >
+                Cancel
+            </button>
+
+        </form>
+
+    </section>
+
+    <section>
+
+        <h2>Available Opportunities</h2>
+
+        <div id="opportunities"></div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
