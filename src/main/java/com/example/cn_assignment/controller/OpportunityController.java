@@ -35,8 +35,7 @@ public class OpportunityController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResearchEntity> getById(@PathVariable Long id){
-
+    public ResponseEntity<ResearchEntity> getById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getById(id));
     }
 
@@ -50,8 +49,9 @@ public class OpportunityController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
-
-        service.delete(id);
+        if(!service.delete(id)){
+            return ResponseEntity.notFound().build();
+        }
 
         return ResponseEntity.noContent().build();
     }

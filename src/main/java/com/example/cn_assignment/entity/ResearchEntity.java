@@ -1,10 +1,13 @@
 package com.example.cn_assignment.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
@@ -19,27 +22,30 @@ public class ResearchEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @NotBlank(message = "Research title is required")
     private String researchTitle;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @NotBlank(message = "Description is required")
     private String researchDescription;
 
-    @Column(nullable = false)
+    @NotBlank(message = "Research area is required")
     private String researchArea;
 
-    @Column(nullable = false)
+    @NotBlank(message = "Faculty name is required")
     private String facultyName;
 
-    @Column(nullable = false)
+    @NotBlank(message = "Department is required")
     private String department;
 
-    @Column(nullable = false)
+    @NotBlank(message = "Required skills are required")
     private String requiredSkills;
 
-    private int availablePositions;
+    @NotNull(message = "Available positions is required")
+    @Min(value = 1, message = "At least one position is required")
+    private Integer availablePositions;
 
-    @NotNull
+    @NotNull(message = "Application deadline is required")
+    @Future(message = "Application deadline must be in the future")
     private LocalDate applicationDeadline;
 
     @Enumerated(EnumType.STRING)

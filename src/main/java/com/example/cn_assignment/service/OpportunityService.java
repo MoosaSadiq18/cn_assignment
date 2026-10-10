@@ -3,9 +3,15 @@ package com.example.cn_assignment.service;
 import com.example.cn_assignment.entity.OpportunityStatus;
 import com.example.cn_assignment.entity.ResearchEntity;
 import com.example.cn_assignment.repository.OpportunityRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OpportunityService {
@@ -28,15 +34,15 @@ public class OpportunityService {
         return repository.findAll();
     }
 
-    public ResearchEntity getById(Long id){
+    public ResearchEntity getById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Opportunity not found"));
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Research not found"));
     }
 
     public ResearchEntity update(Long id, ResearchEntity updatedOpportunity){
 
-        ResearchEntity existing = getById(id);
+        ResearchEntity existing = repository.getById(id);
 
         existing.setResearchTitle(updatedOpportunity.getResearchTitle());
         existing.setResearchDescription(updatedOpportunity.getResearchDescription());
@@ -51,8 +57,12 @@ public class OpportunityService {
         return repository.save(existing);
     }
 
-    public void delete(Long id){
-        ResearchEntity opportunity = getById(id);
+    public boolean delete(Long id){
+        ResearchEntity opportunity = repository.getById(id);
+        if(opportunity==null){
+            return false;
+        }
         repository.delete(opportunity);
+        return true;
     }
 }
