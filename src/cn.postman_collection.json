@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "9116a2d0-7789-4a4c-bdc7-52ad8dc51f0b",
+		"name": "cn",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46705185",
+		"_collection_link": "https://baggy-8333265.postman.co/workspace/Baggy's-Workspace~0b24d816-c9e0-4167-8761-df92e71c9496/collection/46705185-9116a2d0-7789-4a4c-bdc7-52ad8dc51f0b?action=share&source=collection_link&creator=46705185"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "open to closed",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get deleted",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "post invalid",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

@@ -1,4 +1,4 @@
-# Computer Networks Assingment#1
+# Computer Networks Assignment#1
 
 This uses Spring boot for backend and vanilla JS for the frontend. It uses MySQL for data storage and Docker Compose to run the backend and database.
 
