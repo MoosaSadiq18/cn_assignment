@@ -50,4 +50,5 @@ public class ResearchEntity {
 
     @Enumerated(EnumType.STRING)
     private OpportunityStatus status;
+    //hi
 }
