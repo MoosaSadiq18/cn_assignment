@@ -28,5 +28,8 @@ Base URL: `http://localhost:8080`
 | PUT | `/api/opportunities/{id}` | Update an opportunity |
 | DELETE | `/api/opportunities/{id}` | Delete an opportunity |
 
+## Github repository link
+https://github.com/MoosaSadiq18/cn_assignment
+
 ## Video link
 https://drive.google.com/file/d/1T7jwND9DvRoRuaYVkPt2nCFsHU_9Ds4h/view?usp=drive_link
